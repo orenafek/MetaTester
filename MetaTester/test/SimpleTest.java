@@ -10,8 +10,11 @@ public class SimpleTest {
 
     @Test
     public void testF(){
+        System.out.println("");
         assertEquals(1,1);
         assertEquals(1,2);
+        System.out.println("");
+        assertTrue(true);
     }
 
 }
