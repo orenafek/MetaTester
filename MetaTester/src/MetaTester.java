@@ -43,6 +43,11 @@ public class MetaTester extends BlockJUnit4ClassRunner {
     @Override
     protected void runChild(FrameworkMethod method, RunNotifier notifier) {
         getAssertLines(getTestLines(method.getName())).forEach(System.out::println);
+        Class<?> newTestClass = new TestClassGenerator().generate("CustomTest", this.sourceLines);
+        try {
+            Object o = newTestClass.newInstance();
+            System.out.println(o.getClass());
+        } catch (InstantiationException | IllegalAccessException ignore) {/**/}
         super.runChild(method, notifier);
     }
 
@@ -57,17 +62,16 @@ public class MetaTester extends BlockJUnit4ClassRunner {
         try {
             BufferedReader linesStream = new BufferedReader(new FileReader(sourceFile));
             String line = linesStream.readLine();
-            SourceLine.TestLineFactory factory = new SourceLine.TestLineFactory(testName);
+            SourceLine.SourceLineFactory factory = new SourceLine.SourceLineFactory(testName);
             for (int i = 1; line != null; i++) {
-                sourceLines.add(factory.createTestLine(line, i));
+                result.add(factory.createSourceLine(line, i));
                 line = linesStream.readLine();
             }
 
-            sourceLines.remove(SourceLine.EMPTY);
+            result.remove(SourceLine.EMPTY);
             return result;
 
-        } catch (IOException ignore) {
-        }
+        } catch (IOException ignore) {/**/}
 
         return new ArrayList<>();
     }

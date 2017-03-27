@@ -3,8 +3,7 @@
  */
 public class ImportLine extends SourceLine {
 
-
-    private ImportLine(String testClassName, String content, int lineNo) {
+    protected ImportLine(String testClassName, String content, int lineNo) {
         super(testClassName, content, lineNo);
     }
 }
