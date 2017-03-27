@@ -1,4 +1,5 @@
 import junit.framework.JUnit4TestAdapter;
+import junit.framework.TestResult;
 import junit.framework.TestSuite;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
@@ -6,6 +7,8 @@ import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.TestClass;
+import org.junit.runners.parameterized.BlockJUnit4ClassRunnerWithParametersFactory;
+import org.junit.runners.parameterized.TestWithParameters;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -42,12 +45,22 @@ public class MetaTester extends BlockJUnit4ClassRunner {
 
     @Override
     protected void runChild(FrameworkMethod method, RunNotifier notifier) {
-        getAssertLines(getTestLines(method.getName())).forEach(System.out::println);
         Class<?> newTestClass = new TestClassGenerator().generate("CustomTest", this.sourceLines);
         try {
             Object o = newTestClass.newInstance();
             System.out.println(o.getClass());
+
         } catch (InstantiationException | IllegalAccessException ignore) {/**/}
+        TestSuite suite = new TestSuite(newTestClass);
+        TestResult result = new TestResult();
+        suite.run(result);
+
+        try {
+            new BlockJUnit4ClassRunnerWithParametersFactory().createRunnerForTestWithParameters(
+                    new TestWithParameters(testName, new TestClass(newTestClass), new ArrayList<>())).run(notifier);
+        } catch (InitializationError initializationError) {
+            initializationError.printStackTrace();
+        }
         super.runChild(method, notifier);
     }
 

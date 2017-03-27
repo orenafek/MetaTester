@@ -65,9 +65,7 @@ public class TestClassGenerator {
             fileManager.close();
 
 
-        } catch (IOException ignore) {
-            ignore.printStackTrace();
-        }
+        } catch (IOException ignore) {/**/}
 
 
     }

@@ -8,10 +8,10 @@ public class TestLine extends SourceLine {
 
     public String generateTestMethod() {
         return String.format(
-                "@Test\n" +
-                        "public void %s_%d() {" +
-                        "   %s" +
-                        "}"
+                 "\t" + "@Test\n" +
+                 "\t" + "public void %s_%d() {" + "\n" +
+                 "\t" +      "%s" + "\n" +
+                 "\t" + "}"
 
                 , getTestName(), getLineNo(), getContent());
     }
