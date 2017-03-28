@@ -2,8 +2,10 @@
  * Created by oren.afek on 3/27/2017.
  */
 public class TestLine extends SourceLine {
-    protected TestLine(String testClassName, String content, int lineNo) {
+    protected TestLine(String testName, String testClassName, String content, int lineNo) {
         super(testClassName, content, lineNo);
+        this.testName = testName;
+
     }
 
     public String generateTestMethod() {

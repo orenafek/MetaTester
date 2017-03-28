@@ -7,16 +7,22 @@ public class SourceLine {
 
     public static class SourceLineFactory {
         private String testClassName;
+        private String testMethodName;
 
         public SourceLineFactory(String testName) {
             this.testClassName = testName;
         }
 
+        public SourceLineFactory setTestMethodName(String testMethodName) {
+            this.testMethodName = testMethodName;
+            return this;
+        }
+
         public SourceLine createSourceLine(String content, int lineNo) {
             return !Objects.equals(content, "") ?
-                    (content.contains("import") ? new ImportLine(testClassName,content,lineNo) :
-                            (content.contains("assert") ? new TestLine(testClassName,content,lineNo) :
-                    new SourceLine(testClassName, content.trim(), lineNo))) : EMPTY;
+                    (content.contains("import") ? new ImportLine(testClassName, content, lineNo) :
+                            (content.contains("assert") ? new TestLine(testMethodName, testClassName, content, lineNo) :
+                                    new SourceLine(testClassName, content.trim(), lineNo))) : EMPTY;
         }
 
     }

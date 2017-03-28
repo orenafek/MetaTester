@@ -13,17 +13,17 @@ import java.util.Collections;
 import java.util.stream.Collectors;
 
 /**
- * Created by oren.afek on 3/26/2017.
+ * @author Oren Afek
+ * @since 3/26/2017
  */
 public class TestClassGenerator {
 
     private static final String FS = System.getProperty("file.separator");
     private static final String NL = System.getProperty("line.separator");
-    /*private static final String sourcePath = System.getProperty("user.dir") + FS + "test" + FS + "generated" + FS;*/
     private static final String sourcePath = makePath(System.getProperty("user.dir"), "test", "generated");
     public static final String packageName = "generated";
-    /*private static final String classPath = System.getProperty("user.dir") + FS + "test" + FS +;*/
     private static final String classPath = makePath(System.getProperty("user.dir"), "out", "test", "MetaTester");
+    public static final String JAVA_SUFFIX = ".java";
 
     public Class<?> generate(String testClassName, Collection<? extends SourceLine> source) {
         Collection<ImportLine> imports = source.stream()
@@ -43,24 +43,21 @@ public class TestClassGenerator {
 
     private void compileSourceCode(String className, String sourceCode) {
         FileWriter writer = null;
-        String fileName = className + ".java";
-        File sourceFile = new File(makePath(sourcePath, className + ".java"));
+        String fileName = className + JAVA_SUFFIX;
+        File sourceFile = new File(makePath(sourcePath, className + JAVA_SUFFIX));
         try {
             sourceFile.createNewFile();
             writer = new FileWriter(sourceFile);
             writer.write(sourceCode);
             writer.close();
-
             JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
             StandardJavaFileManager fileManager = compiler.getStandardFileManager(null, null, null);
             File classFile = new File(classPath);
             classFile.createNewFile();
             fileManager.setLocation(StandardLocation.CLASS_OUTPUT, Collections.singletonList(classFile));
             StringWriter out = new StringWriter();
-            JavaCompiler.CompilationTask task = compiler.getTask(out, fileManager, null, null, null,
-                    fileManager.getJavaFileObjectsFromFiles(Collections.singletonList(sourceFile)));
-
-            task.call();
+            compiler.getTask(out, fileManager, null, null, null,
+                    fileManager.getJavaFileObjectsFromFiles(Collections.singletonList(sourceFile))).call();
 
             fileManager.close();
 
@@ -112,5 +109,6 @@ public class TestClassGenerator {
     private static String packageHeaderString(String packageName) {
         return "package " + packageName + ";";
     }
+
 
 }

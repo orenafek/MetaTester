@@ -1,4 +1,3 @@
-import junit.framework.JUnit4TestAdapter;
 import junit.framework.TestResult;
 import junit.framework.TestSuite;
 import org.junit.runner.Description;
@@ -17,7 +16,6 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 /**
  * Created by oren.afek on 3/26/2017.
@@ -46,22 +44,17 @@ public class MetaTester extends BlockJUnit4ClassRunner {
     @Override
     protected void runChild(FrameworkMethod method, RunNotifier notifier) {
         Class<?> newTestClass = new TestClassGenerator().generate("CustomTest", this.sourceLines);
-        try {
-            Object o = newTestClass.newInstance();
-            System.out.println(o.getClass());
-
-        } catch (InstantiationException | IllegalAccessException ignore) {/**/}
         TestSuite suite = new TestSuite(newTestClass);
         TestResult result = new TestResult();
         suite.run(result);
 
         try {
             new BlockJUnit4ClassRunnerWithParametersFactory().createRunnerForTestWithParameters(
-                    new TestWithParameters(testName, new TestClass(newTestClass), new ArrayList<>())).run(notifier);
-        } catch (InitializationError initializationError) {
-            initializationError.printStackTrace();
-        }
-        super.runChild(method, notifier);
+                    new TestWithParameters(" ", new TestClass(newTestClass), new ArrayList<>())).run(notifier);
+        } catch (InitializationError ignore) {/**/}
+
+        //Uncomment this to run the original test aswell
+        /*super.runChild(method, notifier);*/
     }
 
     private File openSourceFile(String className) {
@@ -77,6 +70,9 @@ public class MetaTester extends BlockJUnit4ClassRunner {
             String line = linesStream.readLine();
             SourceLine.SourceLineFactory factory = new SourceLine.SourceLineFactory(testName);
             for (int i = 1; line != null; i++) {
+                if (line.contains("void") && line.contains("()")) {
+                    factory.setTestMethodName(line.replace("public void ", "").replace("()", "").replace("{", "").trim());
+                }
                 result.add(factory.createSourceLine(line, i));
                 line = linesStream.readLine();
             }
@@ -89,41 +85,5 @@ public class MetaTester extends BlockJUnit4ClassRunner {
         return new ArrayList<>();
     }
 
-    private SourceLine getEndOfMethodPosition(SourceLine start) {
-        int paren = 0;
-        for (int i = start.getLineNo(); i <= this.sourceLines.size(); ++i) {
-            String line = this.sourceLines.get(i).getContent();
-            paren += line.contains("{") ? 1 : line.contains("}") ? -1 : 0;
-            if (paren <= 0) {
-                return this.sourceLines.get(i);
-            }
-        }
 
-        return SourceLine.EMPTY;
-
-    }
-
-    private Stream<SourceLine> getTestLines(String testName) {
-        sourceLines.forEach(sourceLine -> sourceLine.setTestName(testName));
-        SourceLine start =
-                sourceLines.stream().filter(line -> line.contains("public void " + testName + "(){"))
-                        .findFirst().orElse(SourceLine.EMPTY);
-
-
-        return this.sourceLines.subList(start.getLineNo(), getEndOfMethodPosition(start).getLineNo()).stream();
-
-    }
-
-    private Stream<SourceLine> getAssertLines(Stream<SourceLine> testLines) {
-        return testLines.filter(l -> l.contains("assert"));
-    }
-
-
-    private void x() {
-        TestSuite suite = new TestSuite();
-        TestClass c = new TestClass(Object.class);
-
-        suite.addTest(new JUnit4TestAdapter(Object.class)); // new ...(Test1.class)
-        suite.addTest(new JUnit4TestAdapter(Object.class));
-    }
 }
