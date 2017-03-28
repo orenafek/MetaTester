@@ -11,6 +11,7 @@ public class SourceLine {
     protected String testName;
     protected String content;
     protected int lineNo;
+
     protected SourceLine(String testClassName, String content, int lineNo) {
         this.testClassName = testClassName;
         this.content = content;
