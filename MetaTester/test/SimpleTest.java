@@ -1,10 +1,11 @@
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 /**
- * Created by oren.afek on 3/26/2017.
+ * @author Oren Afek
+ * @since 3/27/2017
  */
 
 @RunWith(MetaTester.class)

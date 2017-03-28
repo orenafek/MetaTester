@@ -1,9 +1,62 @@
 import java.util.Objects;
 
 /**
- * Created by oren.afek on 3/26/2017.
+ * @author Oren Afek
+ * @since 3/27/2017
  */
 public class SourceLine {
+
+    public final static SourceLine EMPTY = new SourceLine("", "", -1);
+    protected String testClassName;
+    protected String testName;
+    protected String content;
+    protected int lineNo;
+    protected SourceLine(String testClassName, String content, int lineNo) {
+        this.testClassName = testClassName;
+        this.content = content;
+        this.lineNo = lineNo;
+    }
+
+    public boolean contains(String subString) {
+        return this.content.contains(subString);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s.%s(%d): %s", testClassName, testName, lineNo, content);
+    }
+
+    public String getTestClassName() {
+        return testClassName;
+    }
+
+    public void setTestClassName(String testClassName) {
+        this.testClassName = testClassName;
+    }
+
+    public String getTestName() {
+        return testName;
+    }
+
+    public void setTestName(String testName) {
+        this.testName = testName;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public int getLineNo() {
+        return lineNo;
+    }
+
+    public void setLineNo(int lineNo) {
+        this.lineNo = lineNo;
+    }
 
     public static class SourceLineFactory {
         private String testClassName;
@@ -25,60 +78,6 @@ public class SourceLine {
                                     new SourceLine(testClassName, content.trim(), lineNo))) : EMPTY;
         }
 
-    }
-
-    public final static SourceLine EMPTY = new SourceLine("", "", -1);
-
-    protected String testClassName;
-    protected String testName;
-    protected String content;
-    protected int lineNo;
-
-    protected SourceLine(String testClassName, String content, int lineNo) {
-        this.testClassName = testClassName;
-        this.content = content;
-        this.lineNo = lineNo;
-    }
-
-    public boolean contains(String subString) {
-        return this.content.contains(subString);
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s.%s(%d): %s", testClassName, testName, lineNo, content);
-    }
-
-    public String getTestClassName() {
-        return testClassName;
-    }
-
-    public String getTestName() {
-        return testName;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public int getLineNo() {
-        return lineNo;
-    }
-
-    public void setTestClassName(String testClassName) {
-        this.testClassName = testClassName;
-    }
-
-    public void setTestName(String testName) {
-        this.testName = testName;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public void setLineNo(int lineNo) {
-        this.lineNo = lineNo;
     }
 
 

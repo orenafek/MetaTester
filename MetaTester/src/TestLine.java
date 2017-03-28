@@ -1,5 +1,6 @@
 /**
- * Created by oren.afek on 3/27/2017.
+ * @author Oren Afek
+ * @since 3/27/2017
  */
 public class TestLine extends SourceLine {
     protected TestLine(String testName, String testClassName, String content, int lineNo) {

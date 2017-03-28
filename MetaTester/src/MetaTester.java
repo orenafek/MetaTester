@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by oren.afek on 3/26/2017.
+ * @author Oren Afek
+ * @since 3/27/2017
  */
 public class MetaTester extends BlockJUnit4ClassRunner {
 
