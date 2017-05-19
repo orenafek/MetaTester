@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb4fe24d-2a27-4993-9c34-b9203d8c33c1" name="Default" comment="refactoring">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/AssertJTransformations.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/Method.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/SimpleTest2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/SimpleTest2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/main/ProgramTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ImportLine.java" afterPath="$PROJECT_DIR$/src/main/ImportLine.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MetaTester.java" afterPath="$PROJECT_DIR$/src/main/MetaTester.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/SourceLine.java" afterPath="$PROJECT_DIR$/src/main/SourceLine.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/TestClassGenerator.java" afterPath="$PROJECT_DIR$/src/main/TestClassGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/TestLine.java" afterPath="$PROJECT_DIR$/src/main/TestLine.java" />
+    <list default="true" id="eb4fe24d-2a27-4993-9c34-b9203d8c33c1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/SimpleTest.java" afterPath="$PROJECT_DIR$/test/SimpleTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/generated/CustomTest.java" afterPath="$PROJECT_DIR$/test/generated/CustomTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/AssertJTransformations.java" afterPath="$PROJECT_DIR$/src/main/AssertJTransformations.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/SimpleTest2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
@@ -79,17 +68,17 @@
         <entry file="file://$PROJECT_DIR$/test/generated/CustomTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="20" />
+              <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="false" />
-                <element signature="e#288#289#0" expanded="false" />
-                <element signature="e#319#320#0" expanded="false" />
-                <element signature="e#353#354#0" expanded="false" />
-                <element signature="e#383#384#0" expanded="false" />
-                <element signature="e#417#418#0" expanded="false" />
+                <element signature="e#250#251#0" expanded="false" />
+                <element signature="e#274#275#0" expanded="false" />
+                <element signature="e#308#309#0" expanded="false" />
+                <element signature="e#331#332#0" expanded="false" />
+                <element signature="e#365#366#0" expanded="false" />
+                <element signature="e#390#391#0" expanded="false" />
+                <element signature="e#424#425#0" expanded="false" />
                 <element signature="e#448#449#0" expanded="false" />
-                <element signature="e#482#483#0" expanded="false" />
-                <element signature="e#513#514#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -98,11 +87,10 @@
       <file leaf-file-name="AssertJTransformations.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/AssertJTransformations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1248">
-              <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+            <state relative-caret-position="412">
+              <caret line="191" column="49" lean-forward="false" selection-start-line="191" selection-start-column="49" selection-end-line="191" selection-end-column="49" />
               <folding>
                 <element signature="docComment;class#AssertJTransformations#0" expanded="false" />
-                <element signature="e#9176#9258#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -377,8 +365,8 @@
       <file leaf-file-name="ProgramTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/main/ProgramTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="114">
+              <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -545,7 +533,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Main" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last.edited.regexp" value="assertEquals(0,l.size());" />
+    <property name="last.edited.regexp" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
   </component>
   <component name="PsiViewer.ProjectComponent">
@@ -585,7 +573,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AssertJTransformations">
+  <component name="RunManager">
     <configuration default="false" name="SimpleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="MetaTester" />
@@ -1220,7 +1208,7 @@
       <workItem from="1491223092859" duration="165000" />
       <workItem from="1495010132780" duration="4848000" />
       <workItem from="1495201896298" duration="8000" />
-      <workItem from="1495204297774" duration="5198000" />
+      <workItem from="1495204297774" duration="6917000" />
     </task>
     <task id="LOCAL-00001" summary="Added Some allot of code">
       <created>1490553994963</created>
@@ -1264,7 +1252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490694073799</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added AssertJTransformations for Phase2">
+      <created>1495209526809</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1495209526809</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1300,10 +1295,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51154000" />
+    <option name="totallyTimeSpent" value="52873000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1321,7 +1317,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1383,7 +1379,8 @@
     <MESSAGE value="refactoring of auto-generated test names" />
     <MESSAGE value="added basic doc of &quot;@author&quot; &amp; &quot;@since&quot;" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="Added AssertJTransformations for Phase2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AssertJTransformations for Phase2" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1393,33 +1390,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/TestClassGenerator.java</url>
-          <line>69</line>
+          <line>94</line>
           <properties />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/AssertJTransformations.java</url>
-          <line>92</line>
+          <line>159</line>
           <properties />
-          <option name="timeStamp" value="63" />
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/AssertJTransformations.java</url>
-          <line>88</line>
+          <line>129</line>
           <properties />
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/AssertJTransformations.java</url>
-          <line>87</line>
-          <properties />
-          <option name="timeStamp" value="65" />
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="66" />
+      <option name="time" value="69" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1715,16 +1706,16 @@
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#492#493#0" expanded="false" />
-            <element signature="e#525#526#0" expanded="false" />
+            <element signature="e#493#494#0" expanded="false" />
+            <element signature="e#527#528#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/main/ProgramTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="114">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1742,17 +1733,17 @@
     <entry file="file://$PROJECT_DIR$/test/generated/CustomTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="20" />
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#288#289#0" expanded="false" />
-            <element signature="e#319#320#0" expanded="false" />
-            <element signature="e#353#354#0" expanded="false" />
-            <element signature="e#383#384#0" expanded="false" />
-            <element signature="e#417#418#0" expanded="false" />
+            <element signature="e#250#251#0" expanded="false" />
+            <element signature="e#274#275#0" expanded="false" />
+            <element signature="e#308#309#0" expanded="false" />
+            <element signature="e#331#332#0" expanded="false" />
+            <element signature="e#365#366#0" expanded="false" />
+            <element signature="e#390#391#0" expanded="false" />
+            <element signature="e#424#425#0" expanded="false" />
             <element signature="e#448#449#0" expanded="false" />
-            <element signature="e#482#483#0" expanded="false" />
-            <element signature="e#513#514#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1780,7 +1771,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/SimpleTest2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -2049,11 +2040,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AssertJTransformations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1248">
-          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+        <state relative-caret-position="412">
+          <caret line="191" column="49" lean-forward="false" selection-start-line="191" selection-start-column="49" selection-end-line="191" selection-end-column="49" />
           <folding>
             <element signature="docComment;class#AssertJTransformations#0" expanded="false" />
-            <element signature="e#9176#9258#0" expanded="false" />
           </folding>
         </state>
       </provider>

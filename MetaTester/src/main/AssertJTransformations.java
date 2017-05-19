@@ -95,8 +95,10 @@ public class AssertJTransformations {
     }
 
     private static String replace(String s, String matchPattern, String replacePattern) {
-
-        return replace(s, matchPattern, replacePattern, naturalsByTemplateString(replacePattern));
+        try {
+            return replace(s, matchPattern, replacePattern, naturalsByTemplateString(replacePattern));
+        } catch (Exception ignore) {/**/}
+        return s;
     }
 
     private static int[] naturalsByTemplateString(String template) {
@@ -133,7 +135,7 @@ public class AssertJTransformations {
 
     private static String replace(String s, String matchPattern, String replacePattern, int[] orderOfTemplatedValues) {
         String[] a = getTemplatedValues(s, matchPattern);
-        String[] rearranged = new String[a.length];
+        String[] rearranged = new String[orderOfTemplatedValues.length];
         rearranged = rearange(a, rearranged, orderOfTemplatedValues);
         return s.replaceAll(matchPattern, getReplacerString(replacePattern, rearranged));
     }
@@ -148,16 +150,46 @@ public class AssertJTransformations {
         return replace(s, "assertEquals\\((.*),(.*).size\\(\\)\\);", "assertThat\\(%s\\).hasSize\\(%s\\);", new int[]{1, 0});
     }
 
+    private static String replaceAssertEquals_isEqualTo(String s) {
+        //language=RegExp
+        return replace(s, "assertEquals\\((.*),(.*)\\);", "assertThat\\(%s\\).isEqualTo\\(%s\\);", new int[]{1, 0});
+    }
+
+    private static String replaceAssertNull_isNull(String s) {
+        //language=RegExp
+        return replace(s, "assertNull\\((.*)\\);", "assertThat\\(%s\\).isNull\\(\\);");
+    }
+
+    private static String replaceAssertNotNull_isNotNull(String s) {
+        //language=RegExp
+        return replace(s, "assertNotNull\\((.*)\\);", "assertThat\\(%s\\).isNotNull\\(\\);");
+    }
+
+    private static String replaceAssertTrue_isTrue(String s) {
+        //language=RegExp
+        return replace(s, "assertTrue\\((.*)\\);", "assertThat\\(%s\\).isTrue\\(\\);");
+    }
+
+    private static String replaceAssertFalse_isFalse(String s) {
+        //language=RegExp
+        return replace(s, "assertFalse\\((.*)\\);", "assertThat\\(%s\\).isFalse\\(\\);");
+    }
+
     public static void main(String[] args) {
         try {
             MetaTester mt = new MetaTester(SimpleTest2.class);
             String s = "assertEquals(0,listy.size());";
             System.out.println(replaceAssertEquals_isEmpty(s));
             System.out.println(replaceAssertEquals_hasSize(s));
-            //System.out.println(replaceStringSize(s,"assertEquals\\(0,(.*).size\\(\\)\\);"));
-            //System.out.println(replaceStringSize(s, "assertEquals\\((.*),(.*).size\\(\\)\\);"));
-            //List<SourceLine> l = mt.readAllLines("testF");
-            // l.stream().map(s -> replaceStringSize(s.getContent())).forEach(System.out::println);
+            System.out.println(replaceAssertEquals_isEqualTo(s));
+            String s2 = "assertNull(listy);";
+            System.out.println(replaceAssertNull_isNull(s2));
+            String s3 = "assertNotNull(listy);";
+            System.out.println(replaceAssertNotNull_isNotNull(s3));
+            String s4 = "assertTrue(5 > 3);";
+            System.out.println(replaceAssertTrue_isTrue(s4));
+            String s5 = "assertFalse(0 > 9);";
+            System.out.println(replaceAssertFalse_isFalse(s5));
         } catch (InitializationError initializationError) {
             initializationError.printStackTrace();
         }
