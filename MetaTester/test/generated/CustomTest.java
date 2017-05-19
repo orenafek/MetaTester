@@ -1,23 +1,34 @@
 package generated;
+
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CustomTest { 
 
 	@Test
-	public void testF_16() {
-	        assertEquals(1,1);
-	}
-
-	@Test
 	public void testF_17() {
-	        assertEquals(1,2);
+		assertEquals(1,1);
 	}
 
 	@Test
-	public void testF_19() {
-	        assertTrue(true);
+	public void testF_18() {
+		assertEquals(1,2);
+	}
+
+	@Test
+	public void testF_20() {
+		assertTrue(true);
+	}
+
+	@Test
+	public void testG_25() {
+		assertEquals(1, 1);
+	}
+
+	@Test
+	public void testH_30() {
+		assertTrue(1 < 5);
 	}
 }

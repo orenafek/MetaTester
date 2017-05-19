@@ -1,3 +1,4 @@
+import main.MetaTester;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -19,5 +20,16 @@ public class SimpleTest {
         System.out.println("");
         assertTrue(true);
     }
+
+    @Test
+    public void testG() {
+        assertEquals(1, 1);
+    }
+
+    @Test
+    public void testH() {
+        assertTrue(1 < 5);
+    }
+
 
 }
